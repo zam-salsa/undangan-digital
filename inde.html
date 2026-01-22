@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Zam & Salsa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <audio id="audio" loop><source src="James_Arthur_-_A_Thousand_Years__Christina_Perri_Cover_(256k).mp3" type="audio/mpeg"></audio>
+    <div class="music-control" id="musicBtn" onclick="toggleMusic()">🎵</div>
+
+    <div class="cover" id="cover">
+        <h2 class="animate__animated animate__fadeInDown">THE WEDDING OF</h2>
+        <h1 class="animate__animated animate__zoomIn">Zam & Salsa</h1>
+        <div class="guest-box animate__animated animate__fadeInUp">
+            <p>Kepada Bapak/Ibu/Saudara/i:</p>
+            <h3 id="guestName">Tamu Undangan</h3>
+        </div>
+        <button class="btn-primary animate__animated animate__pulse animate__infinite" onclick="startApp()">📩 Buka Undangan</button>
+    </div>
+
+    <main class="main-content" id="mainApp">
+        <div class="flower-container"></div>
+        
+        <section id="home" class="reveal">
+            <div class="card">
+               <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."</p>
+                <p><strong>(QS. Ar-Rum: 21)</strong></p>
+                <h2 class="couple-name">Zam & Salsa</h2>
+                <div class="countdown">
+                    <div class="time-box"><span id="days">0</span><label>Hari</label></div>
+                    <div class="time-box"><span id="hours">0</span><label>Jam</label></div>
+                    <div class="time-box"><span id="mins">0</span><label>Menit</label></div>
+                    <div class="time-box"><span id="secs">0</span><label>Detik</label></div>
+                </div>
+            </div>
+        </section>
+        <section id="profile">
+            <h3 class="section-title">Mempelai</h3>
+            
+            <div class="card reveal">
+                <div class="mempelai">
+                    <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?w=400" alt="Gunawan">
+                    <p style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary); margin-bottom: 10px;">MEMPELAI PRIA</p>
+                    <h4>Zamzahri S.Kom</h4>
+                    <p>Putra dari Bpk. Fulan & Ibu Fulanah</p>
+                    <br>
+                    <a href="#" class="btn-gold" style="padding: 5px 15px; font-size: 0.7rem;">📸 @gunawan_insta</a>
+                </div>
+            </div>
+
+            <div class="and-sym reveal">&</div>
+
+            <div class="card reveal">
+                <div class="mempelai">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400" alt="Winda">
+                    <p style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary); margin-bottom: 10px;">MEMPELAI WANITA</p>
+                    <h4> Salsabilamawaddah S.Kom</h4>
+                    <p>Putri dari Bpk. Fulan & Ibu Fulanah</p>
+                    <br>
+                    <a href="#" class="btn-gold" style="padding: 5px 15px; font-size: 0.7rem;">📸 @winda_insta</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="event" class="reveal">
+            <h3 class="section-title">Waktu & Lokasi</h3>
+            <div class="card">
+                <h4>Akad Nikah</h4>
+                <p>08.00 - 10.00 WIB</p>
+                <hr class="divider">
+                <h4>Resepsi</h4>
+                <p>11.00 - Selesai</p>
+                <p><b>Gedung Grand Ballroom</b><br>Jl. Sudirman No. 123, Jakarta</p>
+                <br>
+                <a href="https://maps.google.com" target="_blank" class="btn-gold">📍 Buka Google Maps</a>
+            </div>
+        </section>
+
+        <section id="gallery" class="reveal">
+            <h3 class="section-title">Galeri Foto</h3>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1465495910483-0d6749738f16?w=400" class="gallery-img">
+            </div>
+        </section>
+
+        <section id="gift" class="reveal">
+            <h3 class="section-title">Kado Digital</h3>
+            <div class="card">
+                <p>Doa restu Anda sangat berarti bagi kami. Namun jika ingin memberikan tanda kasih, dapat melalui:</p>
+                <div class="bank-box">
+                    <p><strong>BANK BCA</strong></p>
+                    <p style="font-size: 1.2rem; color: var(--gold); font-weight: bold;">1234567890</p>
+                    <p>a.n Zam/Salsa</p>
+                    <button class="btn-gold" style="padding: 5px 15px; font-size: 0.7rem; margin-top: 10px;" onclick="alert('Nomor rekening disalin!')">Salin Rekening</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="wishes" class="reveal">
+            <h3 class="section-title">Buku Tamu</h3>
+            <div class="card">
+                <form id="rsvpForm">
+                    <input type="text" id="nameInput" placeholder="Nama Lengkap" required>
+                    <textarea id="msgInput" placeholder="Tulis ucapan doa restu..." rows="3" required></textarea>
+                    <button type="submit" class="btn-primary-full">Kirim Ucapan</button>
+                </form>
+            </div>
+            <div id="wishContainer" class="wish-container"></div>
+        </section>
+    </main>
+
+    <nav class="nav-bar" id="navBar">
+        <div class="nav-item" onclick="scrollToSec('home')">🏠<span>Home</span></div>
+        <div class="nav-item" onclick="scrollToSec('event')">📅<span>Acara</span></div>
+        <div class="nav-item" onclick="scrollToSec('gallery')">🖼️<span>Galeri</span></div>
+        <div class="nav-item" onclick="scrollToSec('gift')">🎁<span>Kado</span></div>
+        <div class="nav-item" onclick="scrollToSec('wishes')">💬<span>Ucapan</span></div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

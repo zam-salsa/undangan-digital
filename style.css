@@ -1,0 +1,119 @@
+:root {
+    --primary: #8a9a5b;
+    --gold: #c5a059;
+    --bg-light: #fcfbf7;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Ganti URL di bawah dengan link foto cincin Anda jika punya sendiri */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                      url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=1200');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Gambar tetap diam saat di-scroll */
+    background-repeat: no-repeat;
+    color: #444;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Tambahan agar kartu konten terlihat lebih kontras di atas gambar */
+.card {
+    background: rgba(255, 255, 255, 0.95); /* Putih pekat sedikit transparan */
+    backdrop-filter: blur(8px); /* Efek kaca buram */
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(179, 139, 77, 0.3);
+    margin-bottom: 30px;
+}
+.cover {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200');
+    background-size: cover; background-position: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: white; z-index: 2000; text-align: center; transition: 1s ease-in-out;
+}
+.cover.hide { transform: translateY(-100%); }
+.cover h1 { font-family: 'Great Vibes', cursive; font-size: 4rem; margin: 15px 0; }
+
+.flower-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99; overflow: hidden; }
+.petal { position: absolute; background: #ffd1dc; border-radius: 150% 0 150% 100%; opacity: 0.7; animation: fall linear infinite; }
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+/* Tambahkan atau ganti bagian profil di style.css */
+.label-mempelai {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.mempelai img {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.mempelai h4 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.and-sym {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: var(--gold);
+    margin: 20px 0;
+    opacity: 0.5;
+}
+
+.reveal { opacity: 0; transform: translateY(40px); transition: 1.2s all ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.main-content { max-width: 500px; margin: 0 auto; display: none; padding-bottom: 120px; }
+section { padding: 60px 20px; text-align: center; }
+.card { background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; }
+.couple-name { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold); }
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
+
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+.gallery-img { width: 100%; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.bank-box { background: #f9f7f2; border: 1px dashed var(--gold); padding: 20px; border-radius: 15px; margin-top: 15px; }
+
+.btn-primary, .btn-gold, .btn-primary-full {
+    background: var(--gold); color: white; border: none; padding: 12px 25px; border-radius: 30px;
+    cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; text-decoration: none;
+}
+.btn-primary-full { width: 100%; }
+
+.nav-bar {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    width: 95%; max-width: 450px; background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px); display: none; justify-content: space-around;
+    padding: 12px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 1000;
+}
+.nav-item { cursor: pointer; color: #999; display: flex; flex-direction: column; align-items: center; }
+.nav-item span { font-size: 0.6rem; margin-top: 4px; }
+
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+.time-box { background: var(--primary); color: white; padding: 10px; border-radius: 10px; }
+.time-box span { display: block; font-size: 1.1rem; font-weight: bold; }
+.time-box label { font-size: 0.5rem; }
+
+.wish-bubble { background: #f9f9f9; padding: 15px; border-radius: 15px 15px 15px 0; margin-bottom: 15px; border-left: 5px solid var(--gold); text-align: left; }
+.music-control { position: fixed; top: 20px; right: 20px; z-index: 3000; background: white; width: 40px; height: 40px; border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+input, textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #eee; border-radius: 10px; }
